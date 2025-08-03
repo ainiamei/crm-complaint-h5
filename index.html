@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>投诉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="complaint-container">
+        <h1>投诉</h1>
+        <form id="complaintForm">
+            <!-- 投诉类型选择 -->
+            <div class="form-group">
+                <label for="complaintType">投诉类型</label>
+                <select id="complaintType" name="complaintType" required>
+                    <option value="">请选择投诉类型</option>
+                    <option value="harassment">骚扰信息</option>
+                    <option value="violation">违规行为</option>
+                    <option value="service">服务态度</option>
+                    <option value="other">其他</option>
+                </select>
+            </div>
+
+            <!-- 投诉对象 -->
+            <div class="form-group">
+                <label for="complaintTarget">投诉对象</label>
+                <input type="text" id="complaintTarget" name="complaintTarget" placeholder="请输入被投诉的账号或用户名" required>
+            </div>
+
+            <!-- 投诉内容 -->
+            <div class="form-group">
+                <label for="complaintContent">投诉内容</label>
+                <textarea id="complaintContent" name="complaintContent" rows="5" placeholder="请详细描述您的投诉内容" required></textarea>
+            </div>
+
+            <!-- 证据上传 -->
+            <div class="form-group">
+                <label for="evidence">上传证据</label>
+                <input type="file" id="evidence" name="evidence" accept="image/*,application/pdf" multiple>
+                <p class="help-text">可上传图片或PDF文件，支持多文件上传</p>
+            </div>
+
+            <!-- 提交按钮 -->
+            <button type="submit">提交投诉</button>
+        </form>
+
+        <!-- 反馈提示 -->
+        <div id="feedback" class="feedback hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
